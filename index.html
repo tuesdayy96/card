@@ -5,29 +5,91 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Card</title>
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
-    <script src="js/main.js"></script>
-    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    
 </head>
 <body>
-    <div id="wrap">
-        <div id="card">
-            <div class="card_A">
-                <div class="item b1">1</div>
-                <div class="card_B">
-                    <div class="item b2">2</div>
-                    <div class="item b3">3</div>
-                    <div class="item b4">4</div>
-                    <div class="item b5">5</div>
-                    <div class="item b6">6</div>
+    <div class="wrap">
+        <div class="fullpage"></div>
+
+        <div class="fullpage_swiper swiper">
+
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <div class="content content_slide">
+                        <img class="content_image" src="img/1.jpg" alt="">
+                        <div class="content_text">
+                            <h2 class="content_title">Lorem ipsum dolor</h2>
+                            <p class="content_desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, nobis tempora quam ducimus veritatis sint aut adipisci quibusdam repudiandae autem at! At nihil repudiandae dicta obcaecati</p>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="swiper-slide">
+                    <div class="content content_slide">
+                        <img class="content_image" src="img/2.jpg" alt="">
+                        <div class="content_text">
+                            <h2 class="content_title">Lorem ipsum dolor</h2>
+                            <p class="content_desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, nobis tempora quam ducimus veritatis sint aut adipisci quibusdam repudiandae autem at! At nihil repudiandae dicta obcaecati</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="content content_slide">
+                        <img class="content_image" src="img/3.jpg" alt="">
+                        <div class="content_text">
+                            <h2 class="content_title">Lorem ipsum dolor</h2>
+                            <p class="content_desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, nobis tempora quam ducimus veritatis sint aut adipisci quibusdam repudiandae autem at! At nihil repudiandae dicta obcaecati</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="content content_slide">
+                        <img class="content_image" src="img/4.jpg" alt="">
+                        <div class="content_text">
+                            <h2 class="content_title">Lorem ipsum dolor</h2>
+                            <p class="content_desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, nobis tempora quam ducimus veritatis sint aut adipisci quibusdam repudiandae autem at! At nihil repudiandae dicta obcaecati</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="content content_slide">
+                        <img class="content_image" src="img/5.jpg" alt="">
+                        <div class="content_text">
+                            <h2 class="content_title">Lorem ipsum dolor</h2>
+                            <p class="content_desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, nobis tempora quam ducimus veritatis sint aut adipisci quibusdam repudiandae autem at! At nihil repudiandae dicta obcaecati</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="content content_slide">
+
+                        <img class="content_image" src="img/6.jpg" alt="">
+
+                        <div class="content_text">
+                            <h2 class="content_title">Lorem ipsum dolor</h2>
+                            <p class="content_desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, nobis tempora quam ducimus veritatis sint aut adipisci quibusdam repudiandae autem at! At nihil repudiandae dicta obcaecati</p>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
-        <div class="btns">
-            <span><a href="#" id="prev">prev</a></span>
-            <span><a href="#" id="next">next</a></span>
-        </div>
     </div>
+        <div class="btns">
+            <span><a href="#" id="prev" >prev</a></span>
+            <span><a href="#" id="next" >next</a></span>
+        </div>
+        <div id="idx"></div>
+    </div>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="js/main.js" type="module"></script>
 </body>
 </html>
