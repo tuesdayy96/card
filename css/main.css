@@ -125,10 +125,11 @@ body{
 
 .fullpage_swiper{
    position: absolute;
-   width: 60%;
+   width: 65%;
    min-height: 400px;
+   max-height: 450px;
    aspect-ratio: 2.5 / 1;
-   right: 0px;
+   right: -18%;
    top: 40%;
    padding: 15px 0;
    z-index: 1;
@@ -136,7 +137,6 @@ body{
 }
 
 .swiper{
-    --swiper-navigation-size: 20px;
     visibility: hidden;
 }
 .swiper.swiper-initialized {
@@ -222,13 +222,15 @@ body{
 .btns{
     position: absolute;
     bottom: 5%;
-    width: 120px;
-    height: 0;
-    left:50%;
+    width: 90%;
+    height: auto;
+    right:0;
     z-index: 5;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 .btns span{
-    position: absolute;
     bottom: 0;
     display: flex;
     justify-content: center;
@@ -281,12 +283,51 @@ body{
     transform: rotate(45deg);
 }
 #idx{
-    position: absolute;
-    bottom: 7%;
-    right:15%;
     width: 40%;
     max-width: 500px;
     height: 5px;
     background-color: #fff;
     border-radius: 4px;
+    margin-left:25px;
+    overflow: hidden;
+}
+#idxInner{
+    width: 0%;
+    height: 100%;
+    background-color: #ffee39;
+    transition: width 1s ease;
+}
+#idStr{
+    margin-left: 25px;
+    margin-right: 10px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    perspective: 200px;
+    font-size: 40px;
+    font-weight: 900;
+    width: auto;
+    height: auto;
+}
+#idStrInner{
+    position: absolute;
+    transition: all 0.5s;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transform-origin: 50% 50% 0px;
+    border: none;
+}
+#idStrInnerAfter{
+    transition: all 0.5s;
+    transform-style: preserve-3d;
+    border: none;
+    transform: rotateY(90deg);
+    transform-origin: 50% 50% -40px;
+}
+#idStrInnerAfter.on{
+    transform: rotateY(0deg);
+}
+#idStrInner.on{
+    transform: rotateY(-90deg);
+    transform-origin: 50% 50% -40px;
 }
