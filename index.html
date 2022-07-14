@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div class="wrap">
@@ -24,6 +24,7 @@
                         <div class="content_text">
                             <h2 class="content_title">Lorem ipsum dolor</h2>
                             <p class="content_desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, nobis tempora quam ducimus veritatis sint aut adipisci quibusdam repudiandae autem at! At nihil repudiandae dicta obcaecati</p>
+                            <button class="content_desc">View Detail</button>
                         </div>
                     </div>
                 </div>
@@ -34,6 +35,7 @@
                         <div class="content_text">
                             <h2 class="content_title">Lorem ipsum dolor</h2>
                             <p class="content_desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, nobis tempora quam ducimus veritatis sint aut adipisci quibusdam repudiandae autem at! At nihil repudiandae dicta obcaecati</p>
+                            <button class="content_desc">View Detail</button>
                         </div>
                     </div>
                 </div>
@@ -44,6 +46,7 @@
                         <div class="content_text">
                             <h2 class="content_title">Lorem ipsum dolor</h2>
                             <p class="content_desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, nobis tempora quam ducimus veritatis sint aut adipisci quibusdam repudiandae autem at! At nihil repudiandae dicta obcaecati</p>
+                            <button class="content_desc">View Detail</button>
                         </div>
                     </div>
                 </div>
@@ -54,6 +57,7 @@
                         <div class="content_text">
                             <h2 class="content_title">Lorem ipsum dolor</h2>
                             <p class="content_desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, nobis tempora quam ducimus veritatis sint aut adipisci quibusdam repudiandae autem at! At nihil repudiandae dicta obcaecati</p>
+                            <button class="content_desc">View Detail</button>
                         </div>
                     </div>
                 </div>
@@ -64,6 +68,7 @@
                         <div class="content_text">
                             <h2 class="content_title">Lorem ipsum dolor</h2>
                             <p class="content_desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, nobis tempora quam ducimus veritatis sint aut adipisci quibusdam repudiandae autem at! At nihil repudiandae dicta obcaecati</p>
+                            <button class="content_desc">View Detail</button>
                         </div>
                     </div>
                 </div>
@@ -76,6 +81,7 @@
                         <div class="content_text">
                             <h2 class="content_title">Lorem ipsum dolor</h2>
                             <p class="content_desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, nobis tempora quam ducimus veritatis sint aut adipisci quibusdam repudiandae autem at! At nihil repudiandae dicta obcaecati</p>
+                            <button class="content_desc">View Detail</button>
                         </div>
                     </div>
                 </div>
@@ -90,12 +96,22 @@
                 <div id="idxInner"></div>
             </div>
             <div id="idStr">
-                <span id="idStrInner">01</span><span id="idStrInnerAfter">02</span>
+                <div id="idStrX">
+                    <span id="idStrInner">01</span>
+                    <span id="idStrInnerAfter">02</span>
+                </div>
             </div>
         </div>
         
     </div>
+    <div id="drawing_line">
+        <svg class="drawing_line_svg">
+          <circle class="drawing_line_circle" cx="0" cy="0" r="8"></circle>
+          <polyline class="drawing_line_polyline" points=""></polyline>
+        </svg>
+      </div>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="js/main.js" type="module"></script>
+    <script src="js/cursor.js"></script>
 </body>
 </html>

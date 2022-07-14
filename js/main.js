@@ -84,29 +84,27 @@ function slideChange(swiper){
         var i = contentIdx;
         idStrInner.innerHTML = String(i).padStart(2,'0');
         idStrAfter.innerHTML = String(i+1).padStart(2,'0');
+
         if(contentIdx == 0){
             idxInner.style.width = (idxBar.offsetWidth / (total-1)) * contentIdx + 'px';
             i=1;
-            idStrInner.classList.remove('on');
-            idStrAfter.classList.remove('on');
-            idStrInner.classList.add('on');
-            idStrAfter.classList.add('on');
         } else {
             idxInner.style.width = (idxBar.offsetWidth / (total-1)) * contentIdx + 'px';
-            idStrInner.classList.remove('on');
-            idStrAfter.classList.remove('on');
-            idStrInner.classList.add('on');
-            idStrAfter.classList.add('on');
+            idStrInner.style.transform = "rotateY(-90deg)";
+            idStrAfter.style.transform = "rotateY(-"+360 * i+"deg)";
+ 
         }
     };
     content.addEventListener('transitionstart',progressor);
-
 }
 function swiperInit(swiper){
     const total = swiper.slides.length - swiper.loopedSlides * 2;
     const contentIdx = (swiper.activeIndex - swiper.loopedSlides) % total;
 
     const content = contentFullEl[contentIdx];
+    if(contentIdx == -1){
+        contentIdx = 5;
+    }
     if(!content) return;
 
     content.classList.remove('fullpage_content--hidden');
@@ -124,7 +122,7 @@ const swiper = new Swiper(".swiper", {
     simulateTouch: false,
 
     autoplay: {
-        delay:1000
+        delay:1500
     },
 
     navigation:{
