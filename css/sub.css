@@ -1,17 +1,16 @@
 @import 'common.css';
 html, body {
-  width: 100vw;
-  overflow-x: hidden;
+  width: 100%;
 }
 
 .main {
-  height: 9000px;
+  height: 5000px;
 }
 .main .sec1 {
-  overflow: auto;
   width: 100%;
   max-width: 1790px;
-  height: 1500px;
+  height: 30%;
+  max-height: 1550px;
   text-align: center;
   position: relative;
   margin: 0 auto;
@@ -20,9 +19,9 @@ html, body {
   position: -webkit-sticky;
   position: sticky;
   top: 20vh;
-  margin-bottom: -10vh;
   z-index: 1;
   margin: 0 auto;
+  margin-bottom: -10vh;
   width: 60%;
   text-align: center;
 }
@@ -39,6 +38,7 @@ html, body {
   flex-direction: column;
   justify-content: center;
   font-size: 21vw;
+  line-height: 0.9em;
 }
 .main .sec1_text .t1 {
   position: relative;
@@ -47,4 +47,9 @@ html, body {
 .main .sec1_text .t2 {
   position: relative;
   z-index: 2;
+}
+.main .sec2 {
+  width: 100%;
+  margin: 30vh auto;
+  text-align: center;
 }
