@@ -2,7 +2,7 @@
 
 @media screen and (max-width:768px) {
     .content_full .content_title{
-        font-size: 30px;
+        font-size: 35px;
         margin:0 0 0.2em;
     }
     .content_full .content_text{
@@ -54,6 +54,19 @@
         background-color: transparent;
     }
 }
+
+@media screen and (max-width:500px) {
+    .content_full .content_title{
+        font-size: 22px;
+    }
+    .content_full .content_desc{
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-line-clamp: 4;
+    }
+}
+
 @media screen and (min-width:769px) {
     .content_full .content_title{
         font-size: 42px;

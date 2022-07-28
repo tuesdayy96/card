@@ -131,13 +131,3 @@ const swiper = new Swiper(".swiper", {
     on:{realIndexChange: slideChange, init: swiperInit}
 });
 
-$(function(){
-    $('.hidden_btn').click(function(){
-        $('.hidden_wrap').stop().slideToggle();
-    })
-    $(window).resize(function(){
-        if($(window).innerWidth()>768){
-            $('.hidden_wrap').hide();
-        }
-    })
-})

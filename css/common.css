@@ -2,12 +2,12 @@
 
 @media screen and (max-width:768px) {
     header{
-        position: absolute;
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+        --height-:auto;
     }
     .header_a{
-        position: absolute;
-        top:0;
-        left: 0;
         width: 100vw;
         height: 80px;
         background-color: rgba(210,210,210,0.9);
@@ -80,13 +80,13 @@
 }
 @media screen and (min-width:769px) {
     header{
-        position: absolute;
+        position: fixed;
+        width: 100%;
+        z-index: 100;
     }
     .header_a{
-        position: absolute;
         top:0;
         left: 0;
-        width: 100vw;
         height: 80px;
         background-color: rgba(210,210,210,0.8);
         z-index: 1000;
@@ -115,7 +115,7 @@
         color:rgb(245,245,230);
     }
     header li{
-        margin: 10px;
+        margin: 20px;
         font-weight: bold;
         font-size: 18px;
         transition: all 0.5s;
