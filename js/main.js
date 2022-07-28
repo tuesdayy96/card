@@ -82,16 +82,17 @@ function slideChange(swiper){
         const idStrInner = document.getElementById('idStrInner');
         const idStrAfter = document.getElementById('idStrInnerAfter');
         var i = contentIdx;
-        idStrInner.innerHTML = String(i).padStart(2,'0');
-        idStrAfter.innerHTML = String(i+1).padStart(2,'0');
+        idStrInner.innerHTML = String(i+1).padStart(2,'0');
 
         if(contentIdx == 0){
-            idxInner.style.width = (idxBar.offsetWidth / (total-1)) * contentIdx + 'px';
+            // idxInner.style.width = (idxBar.offsetWidth / (total-1)) * contentIdx + 'px';
+            idxInner.style.width = '0px';
             i=1;
+            idStrInner.style.transform = "rotateY(0deg)";
+            idStrInner.innerHTML = String(i).padStart(2,'0');
         } else {
             idxInner.style.width = (idxBar.offsetWidth / (total-1)) * contentIdx + 'px';
-            idStrInner.style.transform = "rotateY(-90deg)";
-            idStrAfter.style.transform = "rotateY(-"+360 * i+"deg)";
+            idStrInner.style.transform = "rotateY(-"+360 * i+"deg)";
  
         }
     };
@@ -112,8 +113,6 @@ function swiperInit(swiper){
     state.topContent = content;
 }
 
-
-
 const swiper = new Swiper(".swiper", {
     slidesPerView: 3.5,
     spaceBetween: 25,
@@ -131,3 +130,14 @@ const swiper = new Swiper(".swiper", {
     },
     on:{realIndexChange: slideChange, init: swiperInit}
 });
+
+$(function(){
+    $('.hidden_btn').click(function(){
+        $('.hidden_wrap').stop().slideToggle();
+    })
+    $(window).resize(function(){
+        if($(window).innerWidth()>768){
+            $('.hidden_wrap').hide();
+        }
+    })
+})

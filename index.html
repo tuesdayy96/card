@@ -7,7 +7,8 @@
     <title>Card</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="icon" href="img/logo-france-fr.png">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="shortcut icon" href="img/logo-france-fr.png">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
@@ -15,24 +16,40 @@
 <body>
     <div class="wrap">
         <header>
-            <div class="front">
-                <a href="#"><img src="img/logo-france-fr.png" alt=""></a>
-                <a href="#"><img src="img/Logo-Explore-France_04.png" alt=""></a>
+            <div class="header_a">
+                <div class="front">
+                    <a href="#"><img src="img/logo-france-fr.png" alt=""></a>
+                    <a href="#"><img src="img/Logo-Explore-France_04.png" alt=""></a>
+                </div>
+                <div class="back">
+                    <ul class="menu">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Trip</a></li>
+                        <li><a href="#">Event</a></li>
+                        <li><a href="#">Offers</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                    <ul class="icon">
+                        <li><img src="img/search1.png" alt=""></li>
+                        <li><img src="img/account.png" alt=""></li>
+                        <li><img class="hidden_btn" src="img/menu.png" alt=""></li>
+                    </ul>
+                </div>
             </div>
-            <div class="back">
-                <ul class="menu">
-                    <li>Home</li>
-                    <li>Trip</li>
-                    <li>Event</li>
-                    <li>Offers</li>
-                    <li>Contact Us</li>
-                </ul>
-                <ul class="icon">
-                    <li><img src="img/search1.png" alt=""></li>
-                    <li><img src="img/account.png" alt=""></li>
+            <div class="hidden_wrap">
+                <ul class="menu2">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Trip</a></li>
+                    <li><a href="#">Event</a></li>
+                    <li><a href="#">Offers</a></li>
+                    <li><a href="#">Contact Us</a></li>
                 </ul>
             </div>
         </header>
+       
+
+        
+
         <div class="fullpage"></div>
 
         <div class="fullpage_swiper swiper">
@@ -125,7 +142,6 @@
             <div id="idStr">
                 <div id="idStrX">
                     <span id="idStrInner">01</span>
-                    <span id="idStrInnerAfter">02</span>
                 </div>
             </div>
         </div>
