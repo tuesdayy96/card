@@ -1,4 +1,3 @@
-@import 'common.css';
 html, body {
   width: 100%;
 }
@@ -10,7 +9,7 @@ html, body {
   width: 100%;
   max-width: 1790px;
   height: 30%;
-  max-height: 1550px;
+  max-height: 1450px;
   text-align: center;
   position: relative;
   margin: 0 auto;
@@ -50,6 +49,170 @@ html, body {
 }
 .main .sec2 {
   width: 100%;
-  margin: 30vh auto;
+  height: 959px;
   text-align: center;
+  display: flex;
+  align-items: center;
+}
+.main .sec3 {
+  height: 959px;
+  width: 100%;
+  overflow: hidden;
+  background-color: #3a3a3c;
+}
+.main .sec3 .slider_container {
+  position: relative;
+  height: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+.main .sec3 .slider_container .slider-control {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  width: 12%;
+  height: 100%;
+  transition: opacity 0.3s;
+  will-change: opacity;
+  opacity: 0;
+}
+.main .sec3 .slider_container .slider-control.inactive:hover {
+  cursor: auto;
+}
+.main .sec3 .slider_container .slider-control:not(.inactive):hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.main .sec3 .slider_container .slider-control.left {
+  left: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0) 100%);
+}
+.main .sec3 .slider_container .slider-control.right {
+  right: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.18) 100%);
+}
+.main .sec3 .slider_container .slider {
+  z-index: 1;
+  position: relative;
+  height: 100%;
+}
+.main .sec3 .slider_container .slider.animating {
+  transition: transform 0.5s;
+  will-change: transform;
+}
+.main .sec3 .slider_container .slide {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 959px;
+  overflow: hidden;
+}
+.main .sec3 .slider_container .slide:nth-child(1) {
+  left: 0;
+}
+.main .sec3 .slider_container .slide:nth-child(2) {
+  left: 100%;
+}
+.main .sec3 .slider_container .slide:nth-child(3) {
+  left: 200%;
+}
+.main .sec3 .slider_container .slide:nth-child(4) {
+  left: 300%;
+}
+.main .sec3 .slider_container .slide:nth-child(5) {
+  left: 400%;
+}
+.main .sec3 .slider_container .slide:nth-child(6) {
+  left: 500%;
+}
+.main .sec3 .slide_title {
+  position: absolute;
+  z-index: 5;
+  text-align: right;
+  top: 10vh;
+  left: 10vh;
+  color: rgb(18, 55, 138);
+  font-weight: 800;
+}
+.main .sec3 .slide_title span:last-child {
+  color: rgb(245, 23, 44);
+}
+.main .sec3 .no_idx {
+  position: absolute;
+  bottom: 10vh;
+  left: 1vh;
+  z-index: 3;
+  font-size: 40px;
+  font-weight: 800;
+  transform: rotate(90deg);
+}
+.main .sec3 .no_idx span {
+  font-size: 30px;
+  font-weight: 100;
+}
+.main .sec3 .slide-1 .content {
+  width: 50%;
+  padding: 15px;
+  display: flex;
+  margin-top: 50%;
+  margin-left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+.main .sec3 .slide-1 .content video {
+  width: 100%;
+}
+.main .sec4 {
+  width: 100%;
+  background-color: #3a3a3c;
+  padding-top: 10vh;
+}
+.main .sec4_inner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .sec4_inner .content {
+  width: 100%;
+  text-align: center;
+}
+.main .sec4_inner .content h2, .main .sec4_inner .content h3 {
+  font-size: 8.5vw;
+  color: #fff;
+  position: relative;
+}
+.main .sec4_inner .content h2 {
+  width: 70%;
+  text-align: right;
+  z-index: 5;
+}
+.main .sec4_inner .content h3 {
+  line-height: 1em;
+  z-index: 1;
+  bottom: 10vh;
+}
+.main .sec4_inner .content h3:last-child {
+  z-index: 5;
+}
+.main .sec4_inner .content a {
+  position: relative;
+  z-index: 2;
+  padding-left: 10vh;
+  display: flex;
+  justify-content: center;
+  display: block;
+  width: 60%;
+  margin: 0 auto;
+  max-width: 900px;
+  transform: rotate(90deg);
+}
+.main .sec4_inner .content a video {
+  width: 100%;
 }
