@@ -38,6 +38,11 @@ $(function() {
       $slider.css("transform", "translate3d("+ -curSlide*100 +"%,0,0)");
       diff = 0;
       $('.digit').html(curSlide+1+' ');
+      if(curSlide == 2 || curSlide == 5){
+        $('.no_idx, .slide_title').css('color','rgb(0,0,0)')
+      } else {
+        $('.no_idx, .slide_title').css('color','rgb(255,255,245');
+      }
     }
   
     function navigateLeft() {
