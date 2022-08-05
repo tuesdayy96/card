@@ -1,3 +1,4 @@
+// 헤더 휠
 $(function(){
     $(window).on('mousewheel',function(e){
         if(e.originalEvent.wheelDelta > 0){
@@ -8,6 +9,24 @@ $(function(){
     })
 })
 
+// 마우스 커버
+$(function(){
+  $('.cursor_parent').on('mousemove mouseenter',function(e){
+    var x = e.offsetX;
+    var y = e.offsetY;
+    $(this).children('.cursorbox').css('position','absolute');
+    $(this).children('.cursorbox').css({left:x,top:y});
+  })
+  $('.cursor_parent').on('mouseleave',function(){
+    $('.cursorbox').css('position','absolute')
+    $(this).children('.cursorbox').css('left',50+'%');
+    $(this).children('.cursorbox').css('top',50+'%');
+  })
+})
+
+
+
+// 드래그 슬라이드
 $(function() {
     var $slider = $(".slider"),
         diff = 0,
@@ -99,3 +118,12 @@ $(function() {
       }
     });
   });
+
+  // 페이드
+  $(function(){
+    $(window).on('scroll',function(){
+      if($(window).scrollTop()>1500){
+        $('.fade').addClass('on');
+      }
+    })
+  })

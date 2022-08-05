@@ -57,6 +57,15 @@ html, body {
   font-size: 25px;
   font-weight: 800;
 }
+.main .sec2_text {
+  opacity: 0;
+  transform: translate(0, 48px);
+  transition: all 1s;
+}
+.main .sec2_text.on {
+  opacity: 1;
+  transform: translate(0, 0);
+}
 .main .sec2 span {
   font-size: 40px;
 }
@@ -316,27 +325,11 @@ html, body {
 .main .sec4_inner .content a video {
   width: 100%;
 }
-.main .sec4_inner .content a .cursorbox {
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  width: 130px;
-  color: #fff;
-  height: 130px;
-  font-size: 25px;
-  border: 2px solid #bb8d8d;
-  border-radius: 50%;
-  z-index: 5;
-  transform: rotate(-90deg);
-}
 .main .sec5 {
   width: 100%;
   height: 1930px;
   display: flex;
+  position: relative;
 }
 .main .sec5 .left {
   position: -webkit-sticky;
@@ -351,8 +344,6 @@ html, body {
 }
 .main .sec5 .left .cursorbox {
   position: absolute;
-  top: 0;
-  right: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -363,7 +354,7 @@ html, body {
   font-size: 25px;
   border: 2px solid #bb8d8d;
   border-radius: 50%;
-  z-index: 5;
+  z-index: 10;
 }
 .main .sec5 .right {
   overflow: hidden;
