@@ -1,28 +1,47 @@
 @charset "utf-8";
 
 $he : 969px;
-@mixin cursor_circle {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    width: 130px;
-    color:#fff;
-    height: 130px;
-    font-size: 25px;
-    border: 2px solid #bb8d8d;
-    border-radius: 50%;
-    z-index: 10;
-    // transform: translate(-20px,-20px);
+@mixin fade_off($x,$y){
+    opacity: 0;
+    transform: translate($x,$y);
+    transition: all 1s;
+}
+
+@mixin fade_on($x:0,$y:0,$z:0){
+    opacity: 1;
+    transform: translate($x,$y) rotate($z);
 }
 
 html,body{
     width: 100%;
     // overflow-x: hidden;
 }
+
+.cursorbox{
+        
+}
+.cursorbox2{
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.5);
+    z-index: 100;
+    &.on{
+        width: 130px;
+        height: 130px;
+        border: 2px solid #bb8d8d;
+        font-size: 25px;
+        padding: 30px 20px;
+        color:#fff;
+        transition: all 0.5s;
+    }
+}
+
 .main{
     height: 100%;
+    background-color: rgba(25, 25, 25, 1);;
     .sec1{
         // overflow: auto;
         width: 100%;
@@ -55,13 +74,22 @@ html,body{
             justify-content: center;
             font-size: 21vw;
             line-height: 0.9em;
+            color: #fff;
             .t1{
                 position: relative;
                 z-index: 0;
+                @include fade_off(0,48px);
+                &.on{
+                    @include fade_on();
+                }
             }
             .t2{
                 position: relative;
                 z-index: 2;
+                @include fade_off(0,48px);
+                &.on{
+                    @include fade_on();
+                }
             }
         }
     }
@@ -74,13 +102,11 @@ html,body{
         justify-content: center;
         font-size: 25px;
         font-weight: 800;
+        color: #fff;
         &_text{
-            opacity: 0;
-            transform: translate(0,48px);
-            transition: all 1s;
+            @include fade_off(0,48px);
             &.on{
-                opacity: 1;
-                transform: translate(0,0);
+                @include fade_on();
             }
         }
         span{
@@ -100,6 +126,10 @@ html,body{
                 -ms-user-select: none;
                     user-select: none;
             cursor: grab;
+            @include fade_off(80px,0);
+            &.on{
+                @include fade_on();
+            }
             .slider-control {
                 z-index: 2;
                 position: absolute;
@@ -312,7 +342,7 @@ html,body{
     }
     .sec4{
         width: 100%;
-        background-color: #3a3a3c;
+        background-color: rgba(25, 25, 25, 0.9);
         padding-top: 10vh;
         &_inner{
             width: 100%;
@@ -320,6 +350,10 @@ html,body{
             display: flex;
             justify-content: center;
             align-items: center;
+           @include fade_off(-80px,0);
+            &.on{
+                @include fade_on();
+            }
             .content{
                 width: 100%;
                 text-align: center;
@@ -365,6 +399,11 @@ html,body{
         height: 1930px;
         display: flex;
         position: relative;
+        background-color: #fff;
+        @include fade_off(0,0);
+        &.on{
+            @include fade_on();
+        }
         .left{
             position: sticky;
             top: 0;
@@ -374,9 +413,6 @@ html,body{
                 width: 100%;
                 height: 100%;
             }
-            .cursorbox{
-                @include cursor_circle;
-            }
         }
         .right{
             overflow: hidden;
@@ -385,6 +421,12 @@ html,body{
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            p,span{
+                @include fade_off(0, 48px);
+                &.on{
+                    @include fade_on();
+                }
+            }
             h2{
                 text-align: center;
                 width: 100%;
@@ -402,7 +444,7 @@ html,body{
         }
     }
     .sec6{
-        background-color: #3a3a3c;
+        background-color: rgba(25, 25, 25, 0.9);
         padding: 10px;
         width: 100%;
         &_top{
@@ -422,16 +464,33 @@ html,body{
                 img{
                     width: 40%;
                     max-height: 600px;
+                    @include fade_off(-300px,0);
+                    &.on{
+                        @include fade_on();
+                    }
                 }
             }
             .sec6_title{
                 font-size: 13vw;
                 color: #fff;
                 position: absolute;
+                overflow: hidden;
                 top:10px;
                 left: 60%;
-                span{
+                span:first-child{
+                    display: block;
+                    @include fade_off(300px,0);
+                    &.on{
+                    @include fade_on(-90px,100px,90deg);
+                    }
+                }
+                span:last-child{
+                    display: block;
                     font-size: 8vw;
+                    @include fade_off(300px,0);
+                    &.on{
+                    @include fade_on();
+                    }
                 }
             }
         }
@@ -439,23 +498,39 @@ html,body{
             width: 100%;
             text-align: left;
             color: #fff;
-            
+            overflow: hidden;
             h3{
                 text-align: center;
                 margin-bottom: 100px;
+                @include fade_off(0,48px);
+                &.on{
+                    @include fade_on()
+                }
             }
             p{
                 text-align: right;
                 font-size: 25px;
+                @include fade_off(50px,0);
+                &.on{
+                    @include fade_on()
+                }
             }
-            span{
+            >span{
                 display: block;
                 padding: 0 20px;
                 font-size: 25px;
+                @include fade_off(-50px,0);
+                &.on{
+                    @include fade_on()
+                }
             }
             div{
                 text-align: center;
                 margin: 150px 0 50px 0;
+                @include fade_off(0,48px);
+                &.on{
+                    @include fade_on()
+                }
                 a{
                     color: #bb8d8d;
                 }
@@ -463,10 +538,16 @@ html,body{
         }
     }
     .sec7{
+        padding-top: 100px;
         width: 100%;
+        background-color: #fff;
         h3{
             margin: 50px 0;
             text-align: center;
+            @include fade_off(0,48px);
+            &.on{
+                @include fade_on()
+            }
         }
         .scripts{
             display: flex;
@@ -477,6 +558,10 @@ html,body{
                 margin: 10px;
                 width: 30%;
                 height: 400px;
+                @include fade_off(0,48px);
+                &.on{
+                    @include fade_on()
+                }
                 a{
                     display: block;
                     width: 100%;

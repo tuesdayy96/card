@@ -2,8 +2,28 @@ html, body {
   width: 100%;
 }
 
+.cursorbox2 {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 100;
+}
+.cursorbox2.on {
+  width: 130px;
+  height: 130px;
+  border: 2px solid #bb8d8d;
+  font-size: 25px;
+  padding: 30px 20px;
+  color: #fff;
+  transition: all 0.5s;
+}
+
 .main {
   height: 100%;
+  background-color: rgb(25, 25, 25);
 }
 .main .sec1 {
   width: 100%;
@@ -38,14 +58,29 @@ html, body {
   justify-content: center;
   font-size: 21vw;
   line-height: 0.9em;
+  color: #fff;
 }
 .main .sec1_text .t1 {
   position: relative;
   z-index: 0;
+  opacity: 0;
+  transform: translate(0, 48px);
+  transition: all 1s;
+}
+.main .sec1_text .t1.on {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0);
 }
 .main .sec1_text .t2 {
   position: relative;
   z-index: 2;
+  opacity: 0;
+  transform: translate(0, 48px);
+  transition: all 1s;
+}
+.main .sec1_text .t2.on {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0);
 }
 .main .sec2 {
   width: 100%;
@@ -56,6 +91,7 @@ html, body {
   justify-content: center;
   font-size: 25px;
   font-weight: 800;
+  color: #fff;
 }
 .main .sec2_text {
   opacity: 0;
@@ -64,7 +100,7 @@ html, body {
 }
 .main .sec2_text.on {
   opacity: 1;
-  transform: translate(0, 0);
+  transform: translate(0, 0) rotate(0);
 }
 .main .sec2 span {
   font-size: 40px;
@@ -84,6 +120,13 @@ html, body {
   user-select: none;
   cursor: -webkit-grab;
   cursor: grab;
+  opacity: 0;
+  transform: translate(80px, 0);
+  transition: all 1s;
+}
+.main .sec3 .slider_container.on {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0);
 }
 .main .sec3 .slider_container .slider-control {
   z-index: 2;
@@ -277,7 +320,7 @@ html, body {
 }
 .main .sec4 {
   width: 100%;
-  background-color: #3a3a3c;
+  background-color: rgba(25, 25, 25, 0.9);
   padding-top: 10vh;
 }
 .main .sec4_inner {
@@ -286,6 +329,13 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  transform: translate(-80px, 0);
+  transition: all 1s;
+}
+.main .sec4_inner.on {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0);
 }
 .main .sec4_inner .content {
   width: 100%;
@@ -330,6 +380,14 @@ html, body {
   height: 1930px;
   display: flex;
   position: relative;
+  background-color: #fff;
+  opacity: 0;
+  transform: translate(0, 0);
+  transition: all 1s;
+}
+.main .sec5.on {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0);
 }
 .main .sec5 .left {
   position: -webkit-sticky;
@@ -342,20 +400,6 @@ html, body {
   width: 100%;
   height: 100%;
 }
-.main .sec5 .left .cursorbox {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  width: 130px;
-  color: #fff;
-  height: 130px;
-  font-size: 25px;
-  border: 2px solid #bb8d8d;
-  border-radius: 50%;
-  z-index: 10;
-}
 .main .sec5 .right {
   overflow: hidden;
   width: 50%;
@@ -363,6 +407,15 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+.main .sec5 .right p, .main .sec5 .right span {
+  opacity: 0;
+  transform: translate(0, 48px);
+  transition: all 1s;
+}
+.main .sec5 .right p.on, .main .sec5 .right span.on {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0);
 }
 .main .sec5 .right h2 {
   text-align: center;
@@ -379,7 +432,7 @@ html, body {
   color: #bb8d8d;
 }
 .main .sec6 {
-  background-color: #3a3a3c;
+  background-color: rgba(25, 25, 25, 0.9);
   padding: 10px;
   width: 100%;
 }
@@ -403,48 +456,112 @@ html, body {
 .main .sec6_top div img {
   width: 40%;
   max-height: 600px;
+  opacity: 0;
+  transform: translate(-300px, 0);
+  transition: all 1s;
+}
+.main .sec6_top div img.on {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0);
 }
 .main .sec6_top .sec6_title {
   font-size: 13vw;
   color: #fff;
   position: absolute;
+  overflow: hidden;
   top: 10px;
   left: 60%;
 }
-.main .sec6_top .sec6_title span {
+.main .sec6_top .sec6_title span:first-child {
+  display: block;
+  opacity: 0;
+  transform: translate(300px, 0);
+  transition: all 1s;
+}
+.main .sec6_top .sec6_title span:first-child.on {
+  opacity: 1;
+  transform: translate(-90px, 100px) rotate(90deg);
+}
+.main .sec6_top .sec6_title span:last-child {
+  display: block;
   font-size: 8vw;
+  opacity: 0;
+  transform: translate(300px, 0);
+  transition: all 1s;
+}
+.main .sec6_top .sec6_title span:last-child.on {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0);
 }
 .main .sec6_bottom {
   width: 100%;
   text-align: left;
   color: #fff;
+  overflow: hidden;
 }
 .main .sec6_bottom h3 {
   text-align: center;
   margin-bottom: 100px;
+  opacity: 0;
+  transform: translate(0, 48px);
+  transition: all 1s;
+}
+.main .sec6_bottom h3.on {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0);
 }
 .main .sec6_bottom p {
   text-align: right;
   font-size: 25px;
+  opacity: 0;
+  transform: translate(50px, 0);
+  transition: all 1s;
 }
-.main .sec6_bottom span {
+.main .sec6_bottom p.on {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0);
+}
+.main .sec6_bottom > span {
   display: block;
   padding: 0 20px;
   font-size: 25px;
+  opacity: 0;
+  transform: translate(-50px, 0);
+  transition: all 1s;
+}
+.main .sec6_bottom > span.on {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0);
 }
 .main .sec6_bottom div {
   text-align: center;
   margin: 150px 0 50px 0;
+  opacity: 0;
+  transform: translate(0, 48px);
+  transition: all 1s;
+}
+.main .sec6_bottom div.on {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0);
 }
 .main .sec6_bottom div a {
   color: #bb8d8d;
 }
 .main .sec7 {
+  padding-top: 100px;
   width: 100%;
+  background-color: #fff;
 }
 .main .sec7 h3 {
   margin: 50px 0;
   text-align: center;
+  opacity: 0;
+  transform: translate(0, 48px);
+  transition: all 1s;
+}
+.main .sec7 h3.on {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0);
 }
 .main .sec7 .scripts {
   display: flex;
@@ -456,6 +573,13 @@ html, body {
   margin: 10px;
   width: 30%;
   height: 400px;
+  opacity: 0;
+  transform: translate(0, 48px);
+  transition: all 1s;
+}
+.main .sec7 .scripts .scwrap.on {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0);
 }
 .main .sec7 .scripts .scwrap a {
   display: block;

@@ -11,16 +11,16 @@ $(function(){
 
 // 마우스 커버
 $(function(){
-  $('.cursor_parent').on('mousemove mouseenter',function(e){
-    var x = e.offsetX;
-    var y = e.offsetY;
-    $(this).children('.cursorbox').css('position','absolute');
-    $(this).children('.cursorbox').css({left:x,top:y});
+  $(window).on('mousemove',function(e){
+    e.preventDefault();
+    var x = e.pageX-$(window).scrollLeft();
+    var y = e.pageY-$(window).scrollTop();
+    $('.cursorbox, .cursorbox2').css({left:x,top:y});
   })
-  $('.cursor_parent').on('mouseleave',function(){
-    $('.cursorbox').css('position','absolute')
-    $(this).children('.cursorbox').css('left',50+'%');
-    $(this).children('.cursorbox').css('top',50+'%');
+  $('.cursorZ').on('mouseenter',function(){
+      $('.cursorbox2').addClass('on');
+  }).on('mouseleave',function(){
+      $('.cursorbox2').removeClass('on');
   })
 })
 
@@ -121,9 +121,32 @@ $(function() {
 
   // 페이드
   $(function(){
+    var fade = $('.fade');
+    var fade_txt = document.querySelectorAll('.fade_txt');
+    var fade_txt2 = document.querySelectorAll('.fade_txt2');
+    var sec5 = document.querySelector('.sec5');
+    var sec6 = document.querySelector('.sec6');
     $(window).on('scroll',function(){
-      if($(window).scrollTop()>1500){
-        $('.fade').addClass('on');
+      for(let i = 0;i<fade.length;i++){
+        if($(window).scrollTop()>$('.fade').eq(i).offset().top-600){
+          $('.fade').eq(i).addClass('on');
+        } else {
+          $('.fade').eq(i).removeClass('on');
+        }
+      }
+      for(let i=0;i<fade_txt.length;i++){
+        if($(window).scrollTop()>fade_txt[i].offsetTop+sec5.offsetTop-700){
+          $('.fade_txt').eq(i).addClass('on');
+        } else {
+          $('.fade_txt').eq(i).removeClass('on');
+        }
+      }
+      for(let i=0;i<fade_txt2.length;i++){
+        if($(window).scrollTop()>$('.fade_txt2').eq(i).offset().top-700){
+          $('.fade_txt2').eq(i).addClass('on');
+        } else {
+          $('.fade_txt2').eq(i).removeClass('on');
+        }
       }
     })
   })
