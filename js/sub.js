@@ -7,24 +7,8 @@ $(function(){
             $('header').stop().slideUp()
         }   
     })
+    Cursors();
 })
-
-// 마우스 커버
-$(function(){
-  $(window).on('mousemove',function(e){
-    e.preventDefault();
-    var x = e.pageX-$(window).scrollLeft();
-    var y = e.pageY-$(window).scrollTop();
-    $('.cursorbox, .cursorbox2').css({left:x,top:y});
-  })
-  $('.cursorZ').on('mouseenter',function(){
-      $('.cursorbox2').addClass('on');
-  }).on('mouseleave',function(){
-      $('.cursorbox2').removeClass('on');
-  })
-})
-
-
 
 // 드래그 슬라이드
 $(function() {
@@ -150,3 +134,34 @@ $(function() {
       }
     })
   })
+
+  function Cursors(){
+    const cursorZ = document.querySelectorAll('.cursorZ');
+    const cbox = document.querySelector('.cursorbox');
+    const cbox2 = document.querySelector('.cursorbox2');
+  
+    window.addEventListener('mousemove',function(e){
+      e.preventDefault();
+      var x = e.clientX;
+      var y = e.clientY;
+      cbox.style.left = x+'px';
+      cbox.style.top = y+'px';
+      cbox2.style.left = x+'px';
+      cbox2.style.top = y+'px';
+    })
+    
+  for(var i = 0;i<cursorZ.length;i++){
+      cursorZ[i].addEventListener('mouseenter',function(e){
+          e.preventDefault();
+          cbox.style.opacity = 0;
+          cbox2.style.opacity = 1;
+      })
+      cursorZ[i].addEventListener('mouseleave',function(e){
+          e.preventDefault();
+          cbox.style.opacity = 1;
+          cbox2.style.opacity = 0;
+      })
+  }
+    
+}
+  
