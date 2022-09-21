@@ -1,5 +1,7 @@
 @charset "utf-8";
 
+
+
 @media screen and (max-width:768px) {
     .content_full .content_title{
         font-size: 35px;
@@ -30,7 +32,7 @@
     }
     .fullpage_swiper{
         position: absolute;
-        width: 65%;
+        width: 100%;
         min-height: 300px;
         max-height: 450px;
         aspect-ratio: 2.5 / 1;
@@ -55,15 +57,26 @@
     }
 }
 
-@media screen and (max-width:500px) {
+@media (max-width:500px) {
     .content_full .content_title{
-        font-size: 22px;
+        font-size: 16px;
     }
     .content_full .content_desc{
         -webkit-box-orient: vertical;
         display: -webkit-box;
         overflow: hidden;
         -webkit-line-clamp: 4;
+    }
+    button.content_desc{
+        position: relative;
+        width: 100px;
+        height: 50px;
+        margin-top:5vh;
+        border-radius: 8px;
+        color: rgb(245,245,230);
+        border: 1px solid rgb(245,245,230);
+        z-index: 100;
+        background-color: transparent;
     }
 }
 
@@ -108,7 +121,7 @@
         border-radius: 8px;
         color: rgb(245,245,230);
         border: 1px solid rgb(245,245,230);
-        z-index: -1;
+        z-index: 1;
         background-color: transparent;
     }
 }
