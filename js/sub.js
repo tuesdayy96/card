@@ -12,7 +12,7 @@ $(function(){
 
 // 드래그 슬라이드
 $(function() {
-    var $slider = $(".slider"),
+    var slider = $(".slider"),
         diff = 0,
         curSlide = 0,
         numOfSlides = $(".slide").length-1,
@@ -30,15 +30,15 @@ $(function() {
       if (!instant) {
         animating = true;
         manageControls();
-        $slider.addClass("animating");
+        slider.addClass("animating");
         $(".slide").removeClass("active");
         $(".slide-"+curSlide).addClass("active");
         setTimeout(function() {
-          $slider.removeClass("animating");
+          slider.removeClass("animating");
           animating = false;
         }, animTime);
       }
-      $slider.css("transform", "translate3d("+ -curSlide*100 +"%,0,0)");
+      slider.css("transform", "translate3d("+ -curSlide*100 +"%,0,0)");
       diff = 0;
       $('.digit').html(curSlide+1+' ');
       if(curSlide == 2 || curSlide == 5){
@@ -71,8 +71,9 @@ $(function() {
         var x = e.pageX || e.originalEvent.touches[0].pageX;
         diff = (startX - x) / winW * 70;
         if ((!curSlide && diff < 0) || (curSlide === numOfSlides && diff > 0)) diff /= 2;
-        $slider.css("transform", "translate3d("+ (-curSlide*100 - diff) +"%,0,0)");
+        slider.css("transform", "translate3d("+ (-curSlide*100 - diff) +"%,0,0)");
       });
+     
     });
     
     $(document).on("mouseup touchend", function(e) {
